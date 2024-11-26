@@ -93,7 +93,9 @@ function AccountOperations() {
             onChange={(e) => setLoanPurpose(e.target.value)}
             placeholder='Loan purpose'
           />
-          <button onClick={handleRequestLoan}>Request loan</button>
+          <button onClick={handleDeposit} disabled={isLoading}>
+            {isLoading ? 'Converting...' : `Deposit ${depositAmount}`}
+          </button>
         </div>
 
         {currentLoan > 0 && (
